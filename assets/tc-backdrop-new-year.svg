@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2000" viewBox="0 0 600 2000">
+  <defs>
+    <pattern id="p" width="170" height="170" patternUnits="userSpaceOnUse" patternTransform="rotate(12)">
+      <!-- fireworks burst -->
+      <g transform="translate(36 34)" stroke-linecap="round" stroke-width="3" opacity="0.95">
+        <circle cx="0" cy="0" r="4" fill="#fbbf24" stroke="none"/>
+        <path d="M0 -26 V-10" stroke="#fbbf24"/>
+        <path d="M0 26 V10" stroke="#60a5fa"/>
+        <path d="M-26 0 H-10" stroke="#ef4444"/>
+        <path d="M26 0 H10" stroke="#a78bfa"/>
+        <path d="M-18 -18 L-8 -8" stroke="#34d399"/>
+        <path d="M18 18 L8 8" stroke="#f97316"/>
+        <path d="M-18 18 L-8 8" stroke="#60a5fa"/>
+        <path d="M18 -18 L8 -8" stroke="#ef4444"/>
+      </g>
+
+      <!-- confetti -->
+      <g opacity="0.95">
+        <rect x="118" y="22" width="8" height="14" rx="2" fill="#ef4444" transform="rotate(18 122 29)"/>
+        <rect x="136" y="48" width="6" height="12" rx="2" fill="#60a5fa" transform="rotate(-12 139 54)"/>
+        <rect x="110" y="66" width="7" height="13" rx="2" fill="#34d399" transform="rotate(8 114 72)"/>
+        <circle cx="140" cy="92" r="3" fill="#fbbf24"/>
+        <circle cx="118" cy="104" r="3" fill="#a78bfa"/>
+        <circle cx="150" cy="120" r="3" fill="#f97316"/>
+      </g>
+
+      <!-- stars -->
+      <g fill="#fbbf24" opacity="0.9">
+        <polygon points="78,132 82,142 92,142 84,148 88,158 78,152 68,158 72,148 64,142 74,142"/>
+        <polygon points="26,118 28,124 34,124 29,127 31,133 26,130 21,133 23,127 18,124 24,124"/>
+      </g>
+
+      <!-- streamers -->
+      <path d="M20 86 C40 72, 52 92, 72 78" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+      <path d="M20 96 C40 82, 52 102, 72 88" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+
+      <!-- sparkles -->
+      <g stroke="#f9fafb" stroke-width="2" stroke-linecap="round" opacity="0.75">
+        <path d="M140 140 v14M133 147 h14"/>
+        <path d="M112 132 v10M107 137 h10"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="2000" fill="url(#p)"/>
+</svg>

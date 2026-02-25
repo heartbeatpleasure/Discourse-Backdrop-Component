@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2000" viewBox="0 0 600 2000">
+  <defs>
+    <pattern id="p" width="175" height="175" patternUnits="userSpaceOnUse" patternTransform="rotate(10)">
+      <!-- egg -->
+      <g transform="translate(18 22) scale(0.9)">
+        <ellipse cx="36" cy="44" rx="22" ry="28" fill="#60a5fa" opacity="0.9"/>
+        <path d="M16 44 C26 34, 46 54, 56 44" fill="none" stroke="#fef3c7" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+        <path d="M16 56 C26 46, 46 66, 56 56" fill="none" stroke="#fde68a" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+        <path d="M20 32 C30 22, 42 46, 52 36" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      </g>
+
+      <!-- bunny -->
+      <g transform="translate(108 16) scale(0.78) rotate(-6)">
+        <ellipse cx="34" cy="54" rx="18" ry="16" fill="#f9fafb" opacity="0.95"/>
+        <ellipse cx="24" cy="18" rx="8" ry="16" fill="#f9fafb" opacity="0.95"/>
+        <ellipse cx="44" cy="18" rx="8" ry="16" fill="#f9fafb" opacity="0.95"/>
+        <ellipse cx="24" cy="18" rx="4" ry="10" fill="#fda4af" opacity="0.8"/>
+        <ellipse cx="44" cy="18" rx="4" ry="10" fill="#fda4af" opacity="0.8"/>
+        <circle cx="28" cy="52" r="2.8" fill="#111827"/>
+        <circle cx="40" cy="52" r="2.8" fill="#111827"/>
+        <circle cx="34" cy="58" r="2.2" fill="#fda4af"/>
+      </g>
+
+      <!-- flowers -->
+      <g transform="translate(18 118) scale(0.95)" opacity="0.95">
+        <circle cx="18" cy="18" r="6" fill="#f472b6"/>
+        <circle cx="30" cy="18" r="6" fill="#fb7185"/>
+        <circle cx="24" cy="8" r="6" fill="#a78bfa"/>
+        <circle cx="24" cy="28" r="6" fill="#fda4af"/>
+        <circle cx="24" cy="18" r="5" fill="#fbbf24"/>
+      </g>
+
+      <g transform="translate(114 120) scale(0.9)" opacity="0.95">
+        <circle cx="18" cy="18" r="6" fill="#34d399"/>
+        <circle cx="30" cy="18" r="6" fill="#60a5fa"/>
+        <circle cx="24" cy="8" r="6" fill="#f472b6"/>
+        <circle cx="24" cy="28" r="6" fill="#fbbf24"/>
+        <circle cx="24" cy="18" r="5" fill="#f9fafb"/>
+      </g>
+
+      <!-- leaves -->
+      <g fill="#22c55e" opacity="0.75">
+        <path d="M88 150 C98 140, 112 140, 118 152 C104 160, 94 160, 88 150z"/>
+        <path d="M8 150 C18 140, 32 140, 38 152 C24 160, 14 160, 8 150z"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="2000" fill="url(#p)"/>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2000" viewBox="0 0 600 2000">
+  <defs>
+    <pattern id="p" width="170" height="170" patternUnits="userSpaceOnUse" patternTransform="rotate(-7)">
+      <!-- pumpkin -->
+      <g transform="translate(18 26) scale(0.75)">
+        <ellipse cx="40" cy="46" rx="26" ry="22" fill="#fb923c"/>
+        <ellipse cx="30" cy="46" rx="16" ry="21" fill="#f97316"/>
+        <ellipse cx="50" cy="46" rx="16" ry="21" fill="#f97316"/>
+        <rect x="36" y="16" width="8" height="12" rx="2" fill="#16a34a"/>
+        <path d="M40 16 C46 10, 56 12, 58 18" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="30,44 36,50 24,50" fill="#111827" opacity="0.9"/>
+        <polygon points="50,44 56,50 44,50" fill="#111827" opacity="0.9"/>
+        <path d="M28 58 C36 66, 44 66, 52 58" fill="none" stroke="#111827" stroke-width="4" stroke-linecap="round"/>
+      </g>
+
+      <!-- ghost -->
+      <g transform="translate(104 18) scale(0.7) rotate(8)">
+        <path d="M40 18 c-16 0-26 12-26 28v26c0 6 4 10 10 10 4 0 8-2 10-5 2 3 6 5 10 5s8-2 10-5c2 3 6 5 10 5 6 0 10-4 10-10V46c0-16-10-28-24-28z"
+              fill="#f9fafb" opacity="0.95"/>
+        <circle cx="34" cy="50" r="3.5" fill="#111827"/>
+        <circle cx="48" cy="50" r="3.5" fill="#111827"/>
+        <path d="M34 60 C38 64, 44 64, 48 60" fill="none" stroke="#111827" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- bat -->
+      <g transform="translate(22 118) scale(0.85) rotate(-10)" fill="#111827" opacity="0.85">
+        <path d="M40 40c6-10 16-10 20 0 8-8 18-6 18 6 0 10-8 16-16 16-6 0-10-2-12-6-2 4-6 6-12 6-8 0-16-6-16-16 0-12 10-14 18-6z"/>
+      </g>
+
+      <!-- candy -->
+      <g transform="translate(110 118) rotate(12)">
+        <rect x="14" y="18" width="32" height="18" rx="9" fill="#a855f7" opacity="0.9"/>
+        <path d="M14 27 h32" stroke="#fdf2f8" stroke-width="2" opacity="0.8"/>
+        <path d="M12 18 l-10 6 10 6" fill="#ec4899" opacity="0.9"/>
+        <path d="M48 18 l10 6 -10 6" fill="#ec4899" opacity="0.9"/>
+      </g>
+
+      <!-- tiny stars -->
+      <g fill="#fbbf24" opacity="0.9">
+        <circle cx="150" cy="40" r="2.2"/>
+        <circle cx="84" cy="150" r="2.2"/>
+        <circle cx="10" cy="10" r="2.2"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="2000" fill="url(#p)"/>
+</svg>
