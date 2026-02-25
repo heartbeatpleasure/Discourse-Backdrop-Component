@@ -9,16 +9,16 @@ $tc-selected-image: none;
 
 @if $custom-backdrop-image != "" {
   $tc-selected-image: url($custom-backdrop-image);
-} @else if $backdrop-preset == "gray_mesh" {
-  $tc-selected-image: url($tc-backdrop-gray-mesh);
-} @else if $backdrop-preset == "gray_chevrons" {
-  $tc-selected-image: url($tc-backdrop-gray-chevrons);
-} @else if $backdrop-preset == "gray_rings" {
-  $tc-selected-image: url($tc-backdrop-gray-rings);
-} @else if $backdrop-preset == "gray_speckle" {
-  $tc-selected-image: url($tc-backdrop-gray-speckle);
 } @else if $backdrop-preset == "red_hearts" {
   $tc-selected-image: url($tc-backdrop-red-hearts);
+} @else if $backdrop-preset == "halloween" {
+  $tc-selected-image: url($tc-backdrop-halloween);
+} @else if $backdrop-preset == "christmas" {
+  $tc-selected-image: url($tc-backdrop-christmas);
+} @else if $backdrop-preset == "new_year" {
+  $tc-selected-image: url($tc-backdrop-new-year);
+} @else if $backdrop-preset == "easter" {
+  $tc-selected-image: url($tc-backdrop-easter);
 } @else {
   $tc-selected-image: none;
 }

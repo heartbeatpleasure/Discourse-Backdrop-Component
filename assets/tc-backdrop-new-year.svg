@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2000" viewBox="0 0 600 2000">
+  <defs>
+    <symbol id="burst" viewBox="-16 -16 32 32">
+      <g opacity="0.55" stroke-linecap="round">
+        <path d="M0 -14 L0 -6" stroke="#60a5fa" stroke-width="2.2"/>
+        <path d="M0 14 L0 6" stroke="#60a5fa" stroke-width="2.2"/>
+        <path d="M-14 0 L-6 0" stroke="#f472b6" stroke-width="2.2"/>
+        <path d="M14 0 L6 0" stroke="#f472b6" stroke-width="2.2"/>
+        <path d="M-10 -10 L-5 -5" stroke="#fbbf24" stroke-width="2.2"/>
+        <path d="M10 10 L5 5" stroke="#fbbf24" stroke-width="2.2"/>
+        <path d="M-10 10 L-5 5" stroke="#34d399" stroke-width="2.2"/>
+        <path d="M10 -10 L5 -5" stroke="#34d399" stroke-width="2.2"/>
+      </g>
+      <circle cx="0" cy="0" r="2.5" fill="#e5e7eb" fill-opacity="0.6"/>
+    </symbol>
+
+    <symbol id="confetti" viewBox="-18 -18 36 36">
+      <rect x="-14" y="-3" width="6" height="10" rx="2" fill="#f472b6" fill-opacity="0.45"/>
+      <rect x="-2" y="-14" width="6" height="10" rx="2" fill="#60a5fa" fill-opacity="0.40"/>
+      <rect x="10" y="-1" width="6" height="10" rx="2" fill="#34d399" fill-opacity="0.40"/>
+      <circle cx="-4" cy="10" r="2.2" fill="#fbbf24" fill-opacity="0.45"/>
+      <circle cx="8" cy="8" r="2.0" fill="#e5e7eb" fill-opacity="0.45"/>
+    </symbol>
+
+    <symbol id="star" viewBox="-14 -14 28 28">
+      <polygon points="0,-12 3,-3 12,-3 5,2 8,11 0,6 -8,11 -5,2 -12,-3 -3,-3" fill="#fbbf24" fill-opacity="0.4"/>
+    </symbol>
+
+    <symbol id="spark" viewBox="-12 -12 24 24">
+      <path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z" fill="#e5e7eb" fill-opacity="0.22"/>
+    </symbol>
+
+    <pattern id="p" width="240" height="240" patternUnits="userSpaceOnUse">
+      <use href="#confetti" transform="translate(107.0 238.1) rotate(19.9) scale(0.767)"/>
+      <use href="#burst" transform="translate(221.4 218.9) rotate(-6.6) scale(0.792)"/>
+      <use href="#star" transform="translate(210.4 29.0) rotate(-25.3) scale(0.513)"/>
+      <use href="#star" transform="translate(24.9 177.6) rotate(-29.9) scale(0.963)"/>
+      <use href="#star" transform="translate(68.9 64.2) rotate(22.3) scale(0.797)"/>
+      <use href="#star" transform="translate(120.3 195.5) rotate(5.2) scale(0.902)"/>
+      <use href="#burst" transform="translate(83.5 35.5) rotate(2.8) scale(0.739)"/>
+      <use href="#star" transform="translate(208.5 165.6) rotate(-3.0) scale(0.502)"/>
+      <use href="#burst" transform="translate(105.4 52.4) rotate(-24.7) scale(0.760)"/>
+      <use href="#confetti" transform="translate(194.7 115.2) rotate(-6.4) scale(0.485)"/>
+      <use href="#star" transform="translate(73.5 236.7) rotate(-22.6) scale(0.995)"/>
+      <use href="#burst" transform="translate(1.5 113.1) rotate(8.8) scale(0.935)"/>
+      <use href="#burst" transform="translate(40.4 28.8) rotate(-0.2) scale(0.947)"/>
+      <use href="#burst" transform="translate(156.9 119.5) rotate(-6.1) scale(0.673)"/>
+      <use href="#star" transform="translate(141.5 153.7) rotate(10.6) scale(0.752)"/>
+      <use href="#burst" transform="translate(146.5 12.8) rotate(-12.8) scale(0.902)"/>
+      <use href="#spark" transform="translate(36.2 69.0) rotate(11.1) scale(0.814)"/>
+      <use href="#spark" transform="translate(3.0 67.5) rotate(8.3) scale(0.647)"/>
+      <use href="#confetti" transform="translate(33.1 19.4) rotate(-11.9) scale(0.606)"/>
+      <use href="#confetti" transform="translate(215.9 142.3) rotate(-24.8) scale(0.763)"/>
+      <use href="#burst" transform="translate(81.4 92.8) rotate(14.7) scale(0.817)"/>
+      <use href="#confetti" transform="translate(154.3 25.4) rotate(9.7) scale(0.613)"/>
+      <use href="#spark" transform="translate(129.4 178.1) rotate(-29.3) scale(0.657)"/>
+      <use href="#star" transform="translate(33.9 39.7) rotate(-8.3) scale(0.723)"/>
+      <use href="#star" transform="translate(162.3 14.7) rotate(-5.1) scale(0.989)"/>
+      <use href="#star" transform="translate(15.4 14.4) rotate(22.3) scale(0.603)"/>
+      <use href="#burst" transform="translate(30.6 208.1) rotate(25.6) scale(0.886)"/>
+      <use href="#confetti" transform="translate(158.4 218.0) rotate(-18.5) scale(0.720)"/>
+      <use href="#spark" transform="translate(14.0 167.6) rotate(24.9) scale(0.886)"/>
+      <use href="#spark" transform="translate(59.8 215.7) rotate(10.0) scale(0.663)"/>
+      <use href="#confetti" transform="translate(8.7 65.2) rotate(-14.9) scale(0.795)"/>
+      <use href="#spark" transform="translate(69.9 51.8) rotate(-15.4) scale(0.462)"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="2000" fill="url(#p)"/>
+</svg>

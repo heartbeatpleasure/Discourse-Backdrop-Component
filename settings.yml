@@ -4,13 +4,13 @@ enabled:
 
 backdrop_preset:
   type: enum
-  default: gray_mesh
+  default: red_hearts
   choices:
-    - gray_mesh
-    - gray_chevrons
-    - gray_rings
-    - gray_speckle
     - red_hearts
+    - halloween
+    - christmas
+    - new_year
+    - easter
     - none
 
 custom_backdrop_image:
