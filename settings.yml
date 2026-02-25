@@ -1,0 +1,78 @@
+enabled:
+  type: bool
+  default: true
+
+backdrop_preset:
+  type: enum
+  default: gray_mesh
+  choices:
+    - gray_mesh
+    - gray_chevrons
+    - gray_rings
+    - gray_speckle
+    - red_hearts
+    - none
+
+custom_backdrop_image:
+  type: upload
+  default: ""
+
+min_viewport_width:
+  type: integer
+  default: 1200
+  min: 0
+
+min_side_space:
+  type: integer
+  default: 80
+  min: 0
+
+max_side_width:
+  type: integer
+  default: 700
+  min: 0
+
+gap_from_site_left:
+  type: integer
+  default: 0
+  min: 0
+
+gap_from_site_right:
+  type: integer
+  default: 0
+  min: 0
+
+opacity:
+  type: integer
+  default: 100
+  min: 0
+  max: 100
+
+repeat:
+  type: enum
+  default: repeat
+  choices:
+    - no-repeat
+    - repeat
+    - repeat-x
+    - repeat-y
+
+size:
+  type: enum
+  default: auto
+  choices:
+    - contain
+    - cover
+    - auto
+
+position_y:
+  type: enum
+  default: top
+  choices:
+    - top
+    - center
+    - bottom
+
+mirror_right:
+  type: bool
+  default: false

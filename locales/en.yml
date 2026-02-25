@@ -1,0 +1,17 @@
+en:
+  theme_metadata:
+    description: "Adds decorative backdrops in the left/right margins (outside the main Discourse layout) on wide screens."
+  settings:
+    enabled: "Enable side backdrops"
+    backdrop_preset: "Built-in backdrop preset"
+    custom_backdrop_image: "Custom backdrop image (optional upload)"
+    min_viewport_width: "Minimum viewport width (px) before anything can show"
+    min_side_space: "Minimum side space required (px) to show a panel"
+    max_side_width: "Maximum panel width (px)"
+    gap_from_site_left: "Gap from site edge (left, px)"
+    gap_from_site_right: "Gap from site edge (right, px)"
+    opacity: "Backdrop opacity (%)"
+    repeat: "Background repeat"
+    size: "Background size"
+    position_y: "Vertical position"
+    mirror_right: "Mirror the right side panel (useful for asymmetrical images)"

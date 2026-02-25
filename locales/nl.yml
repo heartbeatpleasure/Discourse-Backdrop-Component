@@ -1,0 +1,17 @@
+nl:
+  theme_metadata:
+    description: "Voegt decoratieve backdrops toe in de linker/rechter marge (naast de Discourse layout) op brede schermen."
+  settings:
+    enabled: "Zij-backdrops inschakelen"
+    backdrop_preset: "Ingebouwde backdrop preset"
+    custom_backdrop_image: "Eigen backdrop afbeelding (optionele upload)"
+    min_viewport_width: "Minimale viewport-breedte (px) voordat iets zichtbaar kan worden"
+    min_side_space: "Minimale ruimte naast de site (px) om te tonen"
+    max_side_width: "Maximale paneelbreedte (px)"
+    gap_from_site_left: "Afstand vanaf site-rand (links, px)"
+    gap_from_site_right: "Afstand vanaf site-rand (rechts, px)"
+    opacity: "Backdrop transparantie (%)"
+    repeat: "Achtergrond herhaling"
+    size: "Achtergrond grootte"
+    position_y: "Verticale positie"
+    mirror_right: "Spiegel rechterpaneel (handig bij asymmetrische afbeeldingen)"

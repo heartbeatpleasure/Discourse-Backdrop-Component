@@ -1,0 +1,90 @@
+@use "sass:math";
+
+/*
+  Side Backdrop (Margin) - Theme Component
+  Adds decorative panels left/right of the main Discourse layout when there is enough horizontal space.
+*/
+
+$tc-selected-image: none;
+
+@if $custom-backdrop-image != "" {
+  $tc-selected-image: url($custom-backdrop-image);
+} @else if $backdrop-preset == "gray_mesh" {
+  $tc-selected-image: url($tc-backdrop-gray-mesh);
+} @else if $backdrop-preset == "gray_chevrons" {
+  $tc-selected-image: url($tc-backdrop-gray-chevrons);
+} @else if $backdrop-preset == "gray_rings" {
+  $tc-selected-image: url($tc-backdrop-gray-rings);
+} @else if $backdrop-preset == "gray_speckle" {
+  $tc-selected-image: url($tc-backdrop-gray-speckle);
+} @else if $backdrop-preset == "red_hearts" {
+  $tc-selected-image: url($tc-backdrop-red-hearts);
+} @else {
+  $tc-selected-image: none;
+}
+
+:root {
+  --tc-backdrop-image: #{$tc-selected-image};
+  --tc-backdrop-opacity: #{math.div($opacity, 100)};
+  --tc-backdrop-repeat: #{$repeat};
+  --tc-backdrop-size: #{$size};
+  --tc-backdrop-position-y: #{$position-y};
+
+  --tc-backdrop-min-side-space: #{$min-side-space}px;
+  --tc-backdrop-max-side-width: #{$max-side-width}px;
+  --tc-backdrop-min-vw: #{$min-viewport-width}px;
+
+  // Gap between the site edge and the artwork inside the panel.
+  --tc-backdrop-gap-left: #{$gap-from-site-left}px;
+  --tc-backdrop-gap-right: #{$gap-from-site-right}px;
+
+  // Fallback widths based on Discourse's --d-max-width (default ~1110px).
+  // JS will override widths with accurate values using #main-outlet-wrapper.
+  --tc-backdrop-left-width: min(
+    var(--tc-backdrop-max-side-width),
+    max(0px, calc((100vw - var(--d-max-width)) / 2))
+  );
+  --tc-backdrop-right-width: var(--tc-backdrop-left-width);
+}
+
+.tc-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  background-image: var(--tc-backdrop-image);
+  background-repeat: var(--tc-backdrop-repeat);
+  background-size: var(--tc-backdrop-size);
+  opacity: var(--tc-backdrop-opacity);
+
+  // Keep it behind most UI without relying on negative z-index.
+  z-index: 0;
+}
+
+// Align artwork to the site edge (removes the "white strip" feeling).
+.tc-backdrop--left {
+  left: 0;
+  width: var(--tc-backdrop-left-width);
+  background-position: right var(--tc-backdrop-gap-left) var(--tc-backdrop-position-y);
+}
+
+.tc-backdrop--right {
+  right: 0;
+  width: var(--tc-backdrop-right-width);
+  background-position: left var(--tc-backdrop-gap-right) var(--tc-backdrop-position-y);
+}
+
+@if $mirror-right {
+  .tc-backdrop--right {
+    transform: scaleX(-1);
+    transform-origin: center;
+  }
+}
+
+@media (min-width: #{$min-viewport-width}px) {
+  html.tc-backdrop-enabled .tc-backdrop {
+    display: block;
+  }
+}
