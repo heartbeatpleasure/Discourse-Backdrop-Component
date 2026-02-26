@@ -1,21 +1,39 @@
 # Side Backdrop (Margin) – Discourse Theme Component
 
-Toont links en rechts **naast** de Discourse layout een “backdrop” (decoratieve afbeelding),
-alleen als er voldoende ruimte is (dus niet op mobiel / smalle schermen).
+This theme component shows a decorative “backdrop” **in the left/right page margins** (outside the main Discourse layout),
+only when there is enough horizontal space (so it stays hidden on mobile / narrow screens).
 
-## Belangrijkste fix voor brede (4K) schermen
-Deze component meet de randen van `#main-outlet-wrapper` (als die bestaat), omdat dat doorgaans het
-meest overeenkomt met de **visuele** site-rand. Daardoor sluiten de backdrops strak aan op de layout.
+## How it works (short)
+- Two fixed panels are injected into the page:
+  - `.tc-backdrop--left`
+  - `.tc-backdrop--right`
+- JavaScript measures the **visual site edge** using `#main-outlet-wrapper` (fallbacks included) and calculates how much free space
+  exists on each side.
+- If the viewport is wide enough and there is sufficient side space, the component sets CSS variables for the panel widths and
+  adds `tc-backdrop-enabled` to `<html>`.
 
-## Instellingen
-- `gap_from_site_left/right`: extra marge (px) tussen site-rand en backdrop (zet op 0 voor strak)
-- `min_viewport_width`: onder deze viewportbreedte wordt niets getoond
-- `min_side_space`: minimale beschikbare marge per zijde om een paneel te tonen
-- `max_side_width`: maximale paneelbreedte
-- styling: opacity/repeat/size/position/mirror
+## Image modes
+You can choose how the backdrops are sourced:
 
-## Nieuwe presets toevoegen
-1. Voeg een bestand toe onder `assets/`
-2. Voeg het toe aan `about.json` onder `assets`
-3. Voeg de choice toe aan `settings.yml` bij `backdrop_preset`
-4. Breid de mapping uit in `common/common.scss`
+1. **Pattern mode (`pattern`)**
+   - Uses a preset SVG pattern shipped with this component (`backdrop_preset`).
+
+2. **Full mode (`full`)**
+   - Upload **one** image and it will be used on **both** sides (`custom_backdrop_image`).
+
+3. **Split mode (`split`)**
+   - Upload a **left** image and a **right** image (`custom_backdrop_image_left/right`).
+   - If you only upload one side, the other side will automatically fall back to it (to avoid an accidental blank side).
+
+## Key settings
+- `min_viewport_width`: below this width nothing is shown
+- `min_side_space`: minimum free side space (per side) required to display a panel
+- `max_side_width`: maximum panel width
+- `gap_from_site_left/right`: optional “padding” (px) between the site edge and the artwork (set both to 0 for a flush look)
+- Styling: `opacity`, `repeat`, `size`, `position_y`, `mirror_right`
+
+## Adding new presets
+1. Add a file under `assets/`
+2. Add it to `about.json` under `assets`
+3. Add the new choice to `settings.yml` (`backdrop_preset`)
+4. Extend the mapping in `common/common.scss`

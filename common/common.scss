@@ -5,26 +5,64 @@
   Adds decorative panels left/right of the main Discourse layout when there is enough horizontal space.
 */
 
-$tc-selected-image: none;
+$tc-pattern-image: none;
 
-@if $custom-backdrop-image != "" {
-  $tc-selected-image: url($custom-backdrop-image);
-} @else if $backdrop-preset == "red_hearts" {
-  $tc-selected-image: url($tc-backdrop-red-hearts);
+// Pattern preset -> image mapping
+@if $backdrop-preset == "red_hearts" {
+  $tc-pattern-image: url($tc-backdrop-red-hearts);
 } @else if $backdrop-preset == "halloween" {
-  $tc-selected-image: url($tc-backdrop-halloween);
+  $tc-pattern-image: url($tc-backdrop-halloween);
 } @else if $backdrop-preset == "christmas" {
-  $tc-selected-image: url($tc-backdrop-christmas);
+  $tc-pattern-image: url($tc-backdrop-christmas);
 } @else if $backdrop-preset == "new_year" {
-  $tc-selected-image: url($tc-backdrop-new-year);
+  $tc-pattern-image: url($tc-backdrop-new-year);
 } @else if $backdrop-preset == "easter" {
-  $tc-selected-image: url($tc-backdrop-easter);
+  $tc-pattern-image: url($tc-backdrop-easter);
 } @else {
-  $tc-selected-image: none;
+  $tc-pattern-image: none;
+}
+
+$tc-left-image: none;
+$tc-right-image: none;
+
+// Decide which images to use based on the selected mode
+@if $image-mode == "pattern" {
+  $tc-left-image: $tc-pattern-image;
+  $tc-right-image: $tc-pattern-image;
+} @else if $image-mode == "full" {
+  @if $custom-backdrop-image != "" {
+    $tc-left-image: url($custom-backdrop-image);
+    $tc-right-image: url($custom-backdrop-image);
+  } @else {
+    $tc-left-image: none;
+    $tc-right-image: none;
+  }
+} @else if $image-mode == "split" {
+  // If only one side is provided, fall back to the other side so you never end up with "one blank side" by accident.
+  @if $custom-backdrop-image-left != "" {
+    $tc-left-image: url($custom-backdrop-image-left);
+  } @else if $custom-backdrop-image-right != "" {
+    $tc-left-image: url($custom-backdrop-image-right);
+  } @else {
+    $tc-left-image: none;
+  }
+
+  @if $custom-backdrop-image-right != "" {
+    $tc-right-image: url($custom-backdrop-image-right);
+  } @else if $custom-backdrop-image-left != "" {
+    $tc-right-image: url($custom-backdrop-image-left);
+  } @else {
+    $tc-right-image: none;
+  }
+} @else {
+  $tc-left-image: none;
+  $tc-right-image: none;
 }
 
 :root {
-  --tc-backdrop-image: #{$tc-selected-image};
+  --tc-backdrop-image-left: #{$tc-left-image};
+  --tc-backdrop-image-right: #{$tc-right-image};
+
   --tc-backdrop-opacity: #{math.div($opacity, 100)};
   --tc-backdrop-repeat: #{$repeat};
   --tc-backdrop-size: #{$size};
@@ -54,7 +92,6 @@ $tc-selected-image: none;
   bottom: 0;
   pointer-events: none;
 
-  background-image: var(--tc-backdrop-image);
   background-repeat: var(--tc-backdrop-repeat);
   background-size: var(--tc-backdrop-size);
   opacity: var(--tc-backdrop-opacity);
@@ -67,12 +104,14 @@ $tc-selected-image: none;
 .tc-backdrop--left {
   left: 0;
   width: var(--tc-backdrop-left-width);
+  background-image: var(--tc-backdrop-image-left);
   background-position: right var(--tc-backdrop-gap-left) var(--tc-backdrop-position-y);
 }
 
 .tc-backdrop--right {
   right: 0;
   width: var(--tc-backdrop-right-width);
+  background-image: var(--tc-backdrop-image-right);
   background-position: left var(--tc-backdrop-gap-right) var(--tc-backdrop-position-y);
 }
 

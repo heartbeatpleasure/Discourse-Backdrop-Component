@@ -2,6 +2,14 @@ enabled:
   type: bool
   default: true
 
+image_mode:
+  type: enum
+  default: pattern
+  choices:
+    - pattern
+    - full
+    - split
+
 backdrop_preset:
   type: enum
   default: red_hearts
@@ -14,6 +22,14 @@ backdrop_preset:
     - none
 
 custom_backdrop_image:
+  type: upload
+  default: ""
+
+custom_backdrop_image_left:
+  type: upload
+  default: ""
+
+custom_backdrop_image_right:
   type: upload
   default: ""
 

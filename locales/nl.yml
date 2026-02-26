@@ -3,8 +3,11 @@ nl:
     description: "Voegt decoratieve backdrops toe in de linker/rechter marge (naast de Discourse layout) op brede schermen."
   settings:
     enabled: "Zij-backdrops inschakelen"
-    backdrop_preset: "Ingebouwde backdrop preset"
-    custom_backdrop_image: "Eigen backdrop afbeelding (optionele upload)"
+    image_mode: "Afbeeldingsmodus"
+    backdrop_preset: "Preset (patroonmodus)"
+    custom_backdrop_image: "Enkele afbeelding upload (volledige modus)"
+    custom_backdrop_image_left: "Linker afbeelding upload (split modus)"
+    custom_backdrop_image_right: "Rechter afbeelding upload (split modus)"
     min_viewport_width: "Minimale viewport-breedte (px) voordat iets zichtbaar kan worden"
     min_side_space: "Minimale ruimte naast de site (px) om te tonen"
     max_side_width: "Maximale paneelbreedte (px)"

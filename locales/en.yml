@@ -3,8 +3,11 @@ en:
     description: "Adds decorative backdrops in the left/right margins (outside the main Discourse layout) on wide screens."
   settings:
     enabled: "Enable side backdrops"
-    backdrop_preset: "Built-in backdrop preset"
-    custom_backdrop_image: "Custom backdrop image (optional upload)"
+    image_mode: "Image mode"
+    backdrop_preset: "Preset (Pattern mode)"
+    custom_backdrop_image: "Single image upload (Full mode)"
+    custom_backdrop_image_left: "Left image upload (Split mode)"
+    custom_backdrop_image_right: "Right image upload (Split mode)"
     min_viewport_width: "Minimum viewport width (px) before anything can show"
     min_side_space: "Minimum side space required (px) to show a panel"
     max_side_width: "Maximum panel width (px)"

@@ -4,7 +4,7 @@
   "authors": "Chris",
   "about_url": "https://github.com/heartbeatpleasure/Discourse-Backdrop-Component#",
   "license_url": "https://github.com/heartbeatpleasure/Discourse-Backdrop-Component/blob/main/LICENSE",
-  "theme_version": "0.3.1",
+  "theme_version": "0.4.0",
   "assets": {
     "tc-backdrop-red-hearts": "assets/tc-backdrop-red-hearts.svg",
     "tc-backdrop-christmas": "assets/tc-backdrop-christmas.svg",

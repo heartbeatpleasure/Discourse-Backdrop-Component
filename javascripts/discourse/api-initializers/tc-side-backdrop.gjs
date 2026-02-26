@@ -12,6 +12,28 @@ function debounce(fn, wait = 100) {
   };
 }
 
+function hasSelectedImage() {
+  const mode = settings.image_mode || "pattern";
+
+  if (mode === "pattern") {
+    return settings.backdrop_preset !== "none";
+  }
+
+  if (mode === "full") {
+    return Boolean(settings.custom_backdrop_image);
+  }
+
+  if (mode === "split") {
+    return (
+      Boolean(settings.custom_backdrop_image_left) ||
+      Boolean(settings.custom_backdrop_image_right)
+    );
+  }
+
+  // Safe fallback
+  return settings.backdrop_preset !== "none" || Boolean(settings.custom_backdrop_image);
+}
+
 export default apiInitializer((api) => {
   const root = document.documentElement;
 
@@ -21,10 +43,7 @@ export default apiInitializer((api) => {
     root.style.removeProperty("--tc-backdrop-right-width");
   };
 
-  const hasImage =
-    settings.backdrop_preset !== "none" || Boolean(settings.custom_backdrop_image);
-
-  if (!settings.enabled || !hasImage) {
+  if (!settings.enabled || !hasSelectedImage()) {
     clear();
     return;
   }
@@ -36,7 +55,7 @@ export default apiInitializer((api) => {
   const gapRight = parseInt(settings.gap_from_site_right, 10) || 0;
 
   const measure = () => {
-    // Most accurate for your theme (from your DevTools screenshot)
+    // Most accurate for your theme (from DevTools)
     const preferred =
       document.querySelector("#main-outlet-wrapper") ||
       document.querySelector("#main-outlet");
@@ -46,7 +65,7 @@ export default apiInitializer((api) => {
       document.querySelector(".d-header-wrap .wrap") ||
       document.querySelector(".wrap");
 
-    return (preferred || fallback);
+    return preferred || fallback;
   };
 
   const update = () => {
@@ -64,8 +83,9 @@ export default apiInitializer((api) => {
     const rect = el.getBoundingClientRect();
     const vw = window.innerWidth;
 
+    // These gaps shrink the panel itself and also align the artwork to the site edge via CSS.
     const leftGap = rect.left - gapLeft;
-    const rightGap = (vw - rect.right) - gapRight;
+    const rightGap = vw - rect.right - gapRight;
 
     let leftW = clamp(leftGap, 0, maxSideWidth);
     let rightW = clamp(rightGap, 0, maxSideWidth);
