@@ -1,5 +1,3 @@
-@use "sass:math";
-
 /*
   Side Backdrop (Margin) - Theme Component
   Adds decorative panels left/right of the main Discourse layout when there is enough horizontal space.
@@ -63,7 +61,7 @@ $tc-right-image: none;
   --tc-backdrop-image-left: #{$tc-left-image};
   --tc-backdrop-image-right: #{$tc-right-image};
 
-  --tc-backdrop-opacity: #{math.div($opacity, 100)};
+  --tc-backdrop-opacity: 1;
   --tc-backdrop-repeat: #{$repeat};
   --tc-backdrop-size: #{$size};
   --tc-backdrop-position-y: #{$position-y};

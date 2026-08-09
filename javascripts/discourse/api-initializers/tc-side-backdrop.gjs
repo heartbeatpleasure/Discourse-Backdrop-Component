@@ -37,6 +37,10 @@ function hasSelectedImage() {
 export default apiInitializer((api) => {
   const root = document.documentElement;
 
+  const parsedOpacity = Number.parseInt(settings.opacity, 10);
+  const opacity = clamp(Number.isFinite(parsedOpacity) ? parsedOpacity : 100, 0, 100) / 100;
+  root.style.setProperty("--tc-backdrop-opacity", String(opacity));
+
   const clear = () => {
     root.classList.remove("tc-backdrop-enabled");
     root.style.removeProperty("--tc-backdrop-left-width");
